@@ -1,9 +1,11 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState,useContext,useEffect } from 'react'
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-const Edit=({data,setData})=> {
+import { NotesDataContext } from './Context/NotesContext';
+const Edit=()=> {
     const params = useParams()
+    const {data,setData}= useContext(NotesDataContext)
     let [title,setTitle]=useState("")
     let [content,setContent]=useState("")
     let navigate = useNavigate()

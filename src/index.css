@@ -68,3 +68,10 @@ h3{
 span{
  float:right;
 }
+.recent{
+  margin-left:300px;
+  margin-top:470px;
+  position:absolute;
+  color:#203562;
+  font-weight: 600;
+}

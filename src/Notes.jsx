@@ -1,9 +1,10 @@
-import React,{useState} from 'react'
+import React,{useContext,useState} from 'react'
 import Button from 'react-bootstrap/Button';
 import icon from './images/noteicon.png';
 import { useNavigate } from 'react-router-dom';
-
-function Notes({data,setData}) {
+import { NotesDataContext } from './Context/NotesContext';
+function Notes() {
+  let {data,setData} = useContext(NotesDataContext)
   const navigate=useNavigate()
   let handleDelete = (index)=>{
     let newArray=[...data]
@@ -21,7 +22,6 @@ function Notes({data,setData}) {
     })
     setData(newArray)
   }
- 
   return <>
      <div className="div1">
         <div className="wrapper">
@@ -39,6 +39,7 @@ function Notes({data,setData}) {
 </div>
 <div className="view">
     <div className="mynote"><img className="img1" src={icon}/>&nbsp; &nbsp;MY Notes</div>
+    <div className="recent">Recently viewed</div>
     </div>
 <div className="row row-cols-1 row-cols-md-3 g-4 div2">
     {
